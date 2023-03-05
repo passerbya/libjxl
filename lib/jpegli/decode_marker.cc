@@ -62,8 +62,8 @@ void ProcessSOF(j_decompress_ptr cinfo, const uint8_t* data, size_t len) {
     JPEGLI_ERROR("Duplicate SOF marker.");
   }
   m->found_sof_ = true;
-  cinfo->progressive_mode = (data[1] == 0xc2);
-  cinfo->arith_code = 0;
+  cinfo->progressive_mode = static_cast <boolean> (data[1] == 0xc2);
+  cinfo->arith_code = static_cast <boolean> (0);
   size_t pos = 4;
   JPEG_VERIFY_LEN(6);
   cinfo->data_precision = ReadUint8(data, &pos);

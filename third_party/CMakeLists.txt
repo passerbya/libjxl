@@ -12,6 +12,10 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -mmacosx-version-min=10.10")
+set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -mmacosx-version-min=10.10")
+set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -mmacosx-version-min=10.10")
+
 if((SANITIZER STREQUAL "asan") OR (SANITIZER STREQUAL "msan"))
   set(BUILD_TESTING OFF)
 endif()

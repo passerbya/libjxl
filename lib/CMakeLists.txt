@@ -3,6 +3,10 @@
 # Use of this source code is governed by a BSD-style
 # license that can be found in the LICENSE file.
 
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -mmacosx-version-min=10.10")
+set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -mmacosx-version-min=10.10")
+set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -mmacosx-version-min=10.10")
+
 set(JPEGXL_MAJOR_VERSION 0)
 set(JPEGXL_MINOR_VERSION 9)
 set(JPEGXL_PATCH_VERSION 0)
@@ -103,7 +107,6 @@ if (WIN32)
   endif()  # Clang
 else()  # WIN32
   list(APPEND JPEGXL_INTERNAL_FLAGS
-    -fsized-deallocation
     -fno-exceptions
 
     # Language flags

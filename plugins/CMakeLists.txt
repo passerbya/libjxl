@@ -3,6 +3,10 @@
 # Use of this source code is governed by a BSD-style
 # license that can be found in the LICENSE file.
 
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -mmacosx-version-min=10.10")
+set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -mmacosx-version-min=10.10")
+set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -mmacosx-version-min=10.10")
+
 if(NOT MSVC)
   option(JPEGXL_ENABLE_PLUGIN_GDKPIXBUF "Enable plugin for GdkPixbuf image loading library" ON)
   if(JPEGXL_ENABLE_PLUGIN_GDKPIXBUF)

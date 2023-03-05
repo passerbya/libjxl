@@ -235,11 +235,11 @@ boolean jpegli_has_multiple_scans(j_decompress_ptr cinfo) {
   if (cinfo->input_scan_number == 0) {
     JPEGLI_ERROR("No SOS marker found.");
   }
-  return cinfo->master->is_multiscan_;
+  return static_cast <boolean> (cinfo->master->is_multiscan_);
 }
 
 boolean jpegli_input_complete(j_decompress_ptr cinfo) {
-  return cinfo->master->found_eoi_;
+  return static_cast <boolean> (cinfo->master->found_eoi_);
 }
 
 boolean jpegli_start_decompress(j_decompress_ptr cinfo) {
